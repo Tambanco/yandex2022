@@ -1,6 +1,6 @@
 // Task 1
 // Дана строка (UTF-8). Найти самый часто встречаюшийся в ней символ. Если несколько символов встречаются одинаково часто, то можно вывести любой.
-let str = "ababacsf"
+let str = "ababBBBcsf"
 var char = Array(str)
 var simbol = ""
 var count = 0
