@@ -1,21 +1,21 @@
 // Task 1
 // Дана строка (UTF-8). Найти самый часто встречаюшийся в ней символ. Если несколько символов встречаются одинаково часто, то можно вывести любой.
-let oneString = "abababbbccccccc"
-let chars = Array(oneString)
-var strElement = ""
+let str = "ababa"
+var char = Array(str)
+var simbol = ""
 var count = 0
 
-for i in 0...chars.count - 1 {
-    var simbolCount = 0
-    for j in 0...chars.count - 1 {
-        if chars[i] == chars[j] {
-            simbolCount += 1
+for i in 0...char.count - 1 {
+    var newCount = 0
+    for j in 0...char.count - 1 {
+        if char[i] == char[j] {
+            newCount += 1
         }
     }
-    if simbolCount > count {
-        count = simbolCount
-        strElement = "Simbol \(chars[i]), count = \(simbolCount)"
+    if newCount > count {
+        count = newCount
+        simbol = "\(char[i])"
     }
-    
 }
-print(strElement)
+
+print("Simbol: \(simbol), count: \(count)")
