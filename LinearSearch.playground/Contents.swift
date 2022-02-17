@@ -62,30 +62,33 @@
 //Дана последовательность чисел длиной N(N > 0)
 // Найти максимальное число в последовательности
 
-let seq = [1,4,7,3]
+//let seq = [1,4,7,3]
+//
+//func maxNum(sequence: [Int]) -> Int {
+//    guard sequence.count > 1 else { return sequence[0] }
+//
+//    var iMax = 0
+//
+//    for i in 1...sequence.count - 1 {
+//        if sequence[i] > sequence[iMax] {
+//            iMax = i
+//        }
+//    }
+//
+//    return sequence[iMax]
+//}
+//
+////TESTS
+//let seqOne = [6]
+//let seqAllEqual = [9,9,9]
+//let seqAllNegative = [-2,-3,-7]
+//let seqAllZero = [0,0,0]
+//let seqFirst = [3,2,1]
+//let seqLast = [1,2,3]
+//
+//maxNum(sequence: seqLast)
 
-func maxNum(sequence: [Int]) -> Int {
-    guard sequence.count > 1 else { return sequence[0] }
-
-    var iMax = 0
-
-    for i in 1...sequence.count - 1 {
-        if sequence[i] > sequence[iMax] {
-            iMax = i
-        }
-    }
-
-    return sequence[iMax]
-}
-
-//TESTS
-let seqOne = [6]
-let seqAllEqual = [9,9,9]
-let seqAllNegative = [-2,-3,-7]
-let seqAllZero = [0,0,0]
-let seqFirst = [3,2,1]
-let seqLast = [1,2,3]
-
-maxNum(sequence: seqLast)
-
+//Задача №4
+//Дана последовательность чисел длинной N(N>1)
+//Найти максимальное число в последовательности и второе по величине число (такое, которое будет максимальным, если вычеркнуть из последовательности одно максимальное число)
 
