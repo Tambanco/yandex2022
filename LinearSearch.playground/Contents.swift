@@ -98,7 +98,7 @@ func maxiTwo(seq: [Int]) -> String {
     var imax1 = 0
     var imax2 = 1
     
-    for i in 1...seq.count - 1 {
+    for i in 0...seq.count - 1 {
         if seq[i] >= seq[imax1] {
             imax2 = imax1
             imax1 = i
