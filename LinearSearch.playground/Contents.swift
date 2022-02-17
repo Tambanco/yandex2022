@@ -27,33 +27,53 @@
 //
 //searcher1(sequence: seqAllEqual, x: 2)
 
-//ЗАДАЧА №2
-// Дана последовательность чисел длинной N
-// Найти последнее (правое) вхождение положительного числа Х в неё или вывести -1, если число Х не встречалось.
+////ЗАДАЧА №2
+//// Дана последовательность чисел длинной N
+//// Найти последнее (правое) вхождение положительного числа Х в неё или вывести -1, если число Х не встречалось.
+//
+//let seq = [2,4,6,4,6]
+//var idx = -1
+//
+//func searcher2(sequence: [Int], x: Int) -> String {
+//    guard sequence.isEmpty == false else { return "-1" }
+//    guard x >= 0 else { return "Vvedite pologitelnoe chislo" }
+//
+//    for i in 0...sequence.count - 1 {
+//        if sequence[i] == x {
+//            idx = i
+//        }
+//    }
+//
+//    return "\(idx)"
+//}
+//
+//// TESTS
+//let seqIsEmpty: [Int] = []
+//let seqIsOne = [4]
+//let seqAllIsEqual = [4,4,4,4]
+//let seqAllNegative = [-4,-4,-4]
+//let seqFirst = [4,6,7]
+//let seqLast = [3,5,4]
+//let seqAllZero = [0,0,0,0]
+//
+//searcher2(sequence: seqAllZero, x: 0)
 
-let seq = [2,4,6,4,6]
-var idx = -1
+//Задача №3
+//Дана последовательность чисел длиной N(N > 0)
+// Найти максимальное число в последовательности
 
-func searcher2(sequence: [Int], x: Int) -> String {
-    guard sequence.isEmpty == false else { return "-1" }
-    guard x >= 0 else { return "Vvedite pologitelnoe chislo" }
+let seq = [1,4,7,3]
 
-    for i in 0...sequence.count - 1 {
-        if sequence[i] == x {
-            idx = i
+func maxNum(sequence: [Int]) -> Int {
+    var max = sequence[0]
+    
+    for i in 1...sequence.count - 1 {
+        if sequence[i] >= max {
+            max = sequence[i]
         }
     }
-
-    return "\(idx)"
+    
+    return max
 }
 
-// TESTS
-let seqIsEmpty: [Int] = []
-let seqIsOne = [4]
-let seqAllIsEqual = [4,4,4,4]
-let seqAllNegative = [-4,-4,-4]
-let seqFirst = [4,6,7]
-let seqLast = [3,5,4]
-let seqAllZero = [0,0,0,0]
-
-searcher2(sequence: seqAllZero, x: 0)
+maxNum(sequence: seq)
