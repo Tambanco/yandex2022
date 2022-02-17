@@ -92,14 +92,14 @@
 //Дана последовательность чисел длинной N(N>1)
 //Найти максимальное число в последовательности и второе по величине число (такое, которое будет максимальным, если вычеркнуть из последовательности одно максимальное число)
 
-let seq = [1,4,7,6,8]
+let seq = [1,4,8,7,6,8]
 
 func maxiTwo(seq: [Int]) -> String {
     var imax1 = 0
     var imax2 = 1
     
     for i in 1...seq.count - 1 {
-        if seq[i] > seq[imax1] {
+        if seq[i] >= seq[imax1] {
             imax2 = imax1
             imax1 = i
         }
@@ -108,4 +108,12 @@ func maxiTwo(seq: [Int]) -> String {
     return "Max1 = \(seq[imax1]), Max2 = \(seq[imax2])"
 }
 
-maxiTwo(seq: seq)
+//TESTS
+let seqAllEqual = [4,4,4]
+let seqAllNegative = [-3,-2,-4]
+let seqAllZero = [0,0,0]
+let seqFirst = [3,2,1]
+let seqLast = [1,2,3]
+let seqSpecialCase = [1,8,8]
+
+maxiTwo(seq: seqSpecialCase)
