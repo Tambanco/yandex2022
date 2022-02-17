@@ -66,16 +66,16 @@ let seq = [1,4,7,3]
 
 func maxNum(sequence: [Int]) -> Int {
     guard sequence.count > 1 else { return sequence[0] }
-    
-    var max = sequence[0]
-    
+
+    var iMax = 0
+
     for i in 1...sequence.count - 1 {
-        if sequence[i] > max {
-            max = sequence[i]
+        if sequence[i] > sequence[iMax] {
+            iMax = i
         }
     }
-    
-    return max
+
+    return sequence[iMax]
 }
 
 //TESTS
@@ -87,3 +87,5 @@ let seqFirst = [3,2,1]
 let seqLast = [1,2,3]
 
 maxNum(sequence: seqLast)
+
+
