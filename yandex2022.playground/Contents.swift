@@ -19,3 +19,5 @@ for i in 0...char.count - 1 {
 }
 
 print("Simbol: \(simbol), count: \(count)")
+
+// Сложность O(N2)
