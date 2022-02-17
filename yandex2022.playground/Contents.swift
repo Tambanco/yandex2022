@@ -23,4 +23,4 @@ for element in newCharSet {
 
 print("Simbol: \(simbol), count: \(count)")
 
-// Сложность O(N2)
+// Сложность O(NK)
