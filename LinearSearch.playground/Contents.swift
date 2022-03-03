@@ -124,20 +124,41 @@
 var seq = [1,2,3,4,5]
 var ans = -1
 
-func findMinEven(seq: [Int]) -> (String,Int) {
-    guard seq.count != 0 else { return ("Последовательность пустая", 0)}
-    
-    var new: [Int] = []
-    for i in 0...seq.count-1 {
-        if seq[i] % 2 == 0 {
-            new.append(seq[i])
+// Решение 1
+//func findMinEven(seq: [Int]) -> (String,Int) {
+//    guard seq.count != 0 else { return ("Последовательность пустая", 0)}
+//
+//    var new: [Int] = []
+//    for i in 0...seq.count-1 {
+//        if seq[i] % 2 == 0 {
+//            new.append(seq[i])
+//        }
+//    }
+//    if new.count != 0 {
+//        ans = new.min()!
+//    }
+//
+//    return ("Ответ", ans)
+//}
+
+// Решение 2
+func findMinEven(seq: [Int]) -> Int {
+    guard seq.isEmpty == false else { return -1 }
+    for i in 0...seq.count - 1 {
+        if seq[i] % 2 == 0 && (ans == -1 || seq[i] < ans) {
+            ans = seq[i]
         }
     }
-    if new.count != 0 {
-        ans = new.min()!
-    }
-    
-    return ("Ответ", ans)
+    return ans
 }
+
+let emptySeq: [Int] = []
+let oneElem = [4]
+let allEqual = [5,5,5]
+let allNegative = [-3,-5,-7]
+let allZeros = [0,0,0,0]
+let first = [2,3,5,7]
+let last = [3,5,7,8]
+
 
 findMinEven(seq: oneElem)
