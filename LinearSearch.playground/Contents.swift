@@ -124,7 +124,9 @@
 var seq = [1,2,3,4,5]
 var ans = -1
 
-func findMinEven(seq: [Int]) -> Int {
+func findMinEven(seq: [Int]) -> (String,Int) {
+    guard seq.count != 0 else { return ("Последовательность пустая", 0)}
+    
     var new: [Int] = []
     for i in 0...seq.count-1 {
         if seq[i] % 2 == 0 {
@@ -135,7 +137,7 @@ func findMinEven(seq: [Int]) -> Int {
         ans = new.min()!
     }
     
-    return ans
+    return ("Ответ", ans)
 }
 
-findMinEven(seq: seq)
+findMinEven(seq: oneElem)
