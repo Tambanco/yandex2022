@@ -123,6 +123,7 @@
 
 var seq = [1,2,3,4,5]
 var ans = -1
+var flag = false
 
 // Решение 1
 //func findMinEven(seq: [Int]) -> (String,Int) {
@@ -145,8 +146,9 @@ var ans = -1
 func findMinEven(seq: [Int]) -> Int {
     guard seq.isEmpty == false else { return -1 }
     for i in 0...seq.count - 1 {
-        if seq[i] % 2 == 0 && (ans == -1 || seq[i] < ans) {
+        if seq[i] % 2 == 0 && (!flag || seq[i] < ans) {
             ans = seq[i]
+            flag = true
         }
     }
     return ans
