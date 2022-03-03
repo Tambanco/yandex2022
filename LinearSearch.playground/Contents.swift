@@ -121,9 +121,6 @@
 //Задача №5
 // Дана последовательность чисел длиной N. Найти минимальное четное число в последовательности или вывести -1, если такого не существует
 
-var seq = [1,2,3,4,5]
-var ans = -1
-var flag = false
 
 // Решение 1
 //func findMinEven(seq: [Int]) -> (String,Int) {
@@ -143,6 +140,11 @@ var flag = false
 //}
 
 // Решение 2
+
+var seq = [1,2,3,4,5]
+var ans = -1
+var flag = false
+
 func findMinEven(seq: [Int]) -> Int {
     guard seq.isEmpty == false else { return -1 }
     for i in 0...seq.count - 1 {
