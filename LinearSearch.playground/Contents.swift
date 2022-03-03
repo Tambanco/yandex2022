@@ -92,28 +92,50 @@
 //Дана последовательность чисел длинной N(N>1)
 //Найти максимальное число в последовательности и второе по величине число (такое, которое будет максимальным, если вычеркнуть из последовательности одно максимальное число)
 
-let seq = [1,4,8,7,6,8]
+//let seq = [1,4,8,7,6,8]
+//
+//func maxiTwo(seq: [Int]) -> String {
+//    var imax1 = 0
+//    var imax2 = 1
+//
+//    for i in 0...seq.count - 1 {
+//        if seq[i] >= seq[imax1] {
+//            imax2 = imax1
+//            imax1 = i
+//        }
+//    }
+//
+//    return "Max1 = \(seq[imax1]), Max2 = \(seq[imax2])"
+//}
+//
+////TESTS
+//let seqAllEqual = [4,4,4]
+//let seqAllNegative = [-3,-2,-4]
+//let seqAllZero = [0,0,0]
+//let seqFirst = [3,2,1]
+//let seqLast = [1,2,3]
+//let seqSpecialCase = [1,8,8]
+//
+//maxiTwo(seq: seqSpecialCase)
 
-func maxiTwo(seq: [Int]) -> String {
-    var imax1 = 0
-    var imax2 = 1
-    
-    for i in 0...seq.count - 1 {
-        if seq[i] >= seq[imax1] {
-            imax2 = imax1
-            imax1 = i
+//Задача №5
+// Дана последовательность чисел длиной N. Найти минимальное четное число в последовательности или вывести -1, если такого не существует
+
+var seq = [1,2,3,4,5]
+var ans = -1
+
+func findMinEven(seq: [Int]) -> Int {
+    var new: [Int] = []
+    for i in 0...seq.count-1 {
+        if seq[i] % 2 == 0 {
+            new.append(seq[i])
         }
     }
+    if new.count != 0 {
+        ans = new.min()!
+    }
     
-    return "Max1 = \(seq[imax1]), Max2 = \(seq[imax2])"
+    return ans
 }
 
-//TESTS
-let seqAllEqual = [4,4,4]
-let seqAllNegative = [-3,-2,-4]
-let seqAllZero = [0,0,0]
-let seqFirst = [3,2,1]
-let seqLast = [1,2,3]
-let seqSpecialCase = [1,8,8]
-
-maxiTwo(seq: seqSpecialCase)
+findMinEven(seq: seq)
